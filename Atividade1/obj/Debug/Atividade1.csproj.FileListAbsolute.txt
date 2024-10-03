@@ -1,0 +1,32 @@
+D:\Etec 2\DS I\Ala\Atividade1\Atividade1\obj\Debug\Atividade1.csprojResolveAssemblyReference.cache
+D:\Etec 2\DS I\Ala\Atividade1\Atividade1\obj\Debug\Atividade1.MainForm.resources
+D:\Etec 2\DS I\Ala\Atividade1\Atividade1\obj\Debug\Atividade1.csproj.GenerateResource.Cache
+D:\Etec 2\DS I\Ala\Atividade1\Atividade1\bin\Debug\Atividade1.exe.config
+D:\Etec 2\DS I\Ala\Atividade1\Atividade1\bin\Debug\Atividade1.exe
+D:\Etec 2\DS I\Ala\Atividade1\Atividade1\bin\Debug\Atividade1.pdb
+D:\Etec 2\DS I\Ala\Atividade1\Atividade1\obj\Debug\Atividade1.exe
+D:\Etec 2\DS I\Ala\Atividade1\Atividade1\obj\Debug\Atividade1.pdb
+E:\Etec 2\DS I\Ala\Atividade1\Atividade1\bin\Debug\Atividade1.exe.config
+E:\Etec 2\DS I\Ala\Atividade1\Atividade1\bin\Debug\Atividade1.exe
+E:\Etec 2\DS I\Ala\Atividade1\Atividade1\bin\Debug\Atividade1.pdb
+E:\Etec 2\DS I\Ala\Atividade1\Atividade1\obj\Debug\Atividade1.csprojResolveAssemblyReference.cache
+E:\Etec 2\DS I\Ala\Atividade1\Atividade1\obj\Debug\Atividade1.MainForm.resources
+E:\Etec 2\DS I\Ala\Atividade1\Atividade1\obj\Debug\Atividade1.csproj.GenerateResource.Cache
+E:\Etec 2\DS I\Ala\Atividade1\Atividade1\obj\Debug\Atividade1.exe
+E:\Etec 2\DS I\Ala\Atividade1\Atividade1\obj\Debug\Atividade1.pdb
+C:\Users\gabriel\Desktop\Etec\ETEC - PA\PA II\Atividade1\Atividade1\bin\Debug\Atividade1.exe.config
+C:\Users\gabriel\Desktop\Etec\ETEC - PA\PA II\Atividade1\Atividade1\bin\Debug\Atividade1.exe
+C:\Users\gabriel\Desktop\Etec\ETEC - PA\PA II\Atividade1\Atividade1\bin\Debug\Atividade1.pdb
+C:\Users\gabriel\Desktop\Etec\ETEC - PA\PA II\Atividade1\Atividade1\obj\Debug\Atividade1.csprojResolveAssemblyReference.cache
+C:\Users\gabriel\Desktop\Etec\ETEC - PA\PA II\Atividade1\Atividade1\obj\Debug\Atividade1.MainForm.resources
+C:\Users\gabriel\Desktop\Etec\ETEC - PA\PA II\Atividade1\Atividade1\obj\Debug\Atividade1.csproj.GenerateResource.Cache
+C:\Users\gabriel\Desktop\Etec\ETEC - PA\PA II\Atividade1\Atividade1\obj\Debug\Atividade1.exe
+C:\Users\gabriel\Desktop\Etec\ETEC - PA\PA II\Atividade1\Atividade1\obj\Debug\Atividade1.pdb
+D:\saizGame\Atividade1\bin\Debug\Atividade1.exe.config
+D:\saizGame\Atividade1\bin\Debug\Atividade1.exe
+D:\saizGame\Atividade1\bin\Debug\Atividade1.pdb
+D:\saizGame\Atividade1\obj\Debug\Atividade1.csprojResolveAssemblyReference.cache
+D:\saizGame\Atividade1\obj\Debug\Atividade1.MainForm.resources
+D:\saizGame\Atividade1\obj\Debug\Atividade1.csproj.GenerateResource.Cache
+D:\saizGame\Atividade1\obj\Debug\Atividade1.exe
+D:\saizGame\Atividade1\obj\Debug\Atividade1.pdb
