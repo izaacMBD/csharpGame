@@ -30,3 +30,11 @@ D:\saizGame\Atividade1\obj\Debug\Atividade1.MainForm.resources
 D:\saizGame\Atividade1\obj\Debug\Atividade1.csproj.GenerateResource.Cache
 D:\saizGame\Atividade1\obj\Debug\Atividade1.exe
 D:\saizGame\Atividade1\obj\Debug\Atividade1.pdb
+C:\cmder\csharpGame\Atividade1\bin\Debug\Atividade1.exe.config
+C:\cmder\csharpGame\Atividade1\bin\Debug\Atividade1.exe
+C:\cmder\csharpGame\Atividade1\bin\Debug\Atividade1.pdb
+C:\cmder\csharpGame\Atividade1\obj\Debug\Atividade1.csprojResolveAssemblyReference.cache
+C:\cmder\csharpGame\Atividade1\obj\Debug\Atividade1.MainForm.resources
+C:\cmder\csharpGame\Atividade1\obj\Debug\Atividade1.csproj.GenerateResource.Cache
+C:\cmder\csharpGame\Atividade1\obj\Debug\Atividade1.exe
+C:\cmder\csharpGame\Atividade1\obj\Debug\Atividade1.pdb

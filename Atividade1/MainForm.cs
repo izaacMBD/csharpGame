@@ -43,7 +43,10 @@ namespace Atividade1
 				heroi.MoveCima();
 			}
 			
-			
+			if (e.KeyCode == Keys.Space)
+			{
+				heroi.FireBall();
+			}
 		}
 	}
 }
