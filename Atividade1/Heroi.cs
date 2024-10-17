@@ -72,10 +72,14 @@ namespace Atividade1
         {
             // Cria a fireball e deixa-a na posição inicial
             Tiro novoTiro = new Tiro();
+            
             novoTiro.Parent = MainForm.fundo;
+            
             novoTiro.Left = Left;
-            novoTiro.timer.Enabled = true;
             novoTiro.Top = this.Top + (this.Height / 3);
+            
+            novoTiro.timer.Enabled = true;
+            
             novoTiro.direcao = direcao;
         }
     }

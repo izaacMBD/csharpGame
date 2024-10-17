@@ -26,11 +26,11 @@ namespace Atividade1
 
         public void Update()
         {
-            Left += 10; // Move o tiro para frente
-            if (Left >= 1000) // Se o tiro ultrapassar a tela
+            Left += 10 * direcao; // Move o tiro para frente
+            if (Left >= 1000 || Left <= 0) // Se o tiro ultrapassar a tela
             {
-                Visible = false; // Faz o tiro desaparecer
                 timer.Enabled = false; // Desativa o timer
+                Dispose();
             }
         }
 
@@ -40,12 +40,6 @@ namespace Atividade1
             {
                 var tiro = tiros[i];
                 tiro.Update(); // Atualiza cada tiro
-
-                // Remove tiros que saíram da tela
-                if (!tiro.Visible)
-                {
-                    tiros.RemoveAt(i);
-                }
             }
         }
     }
