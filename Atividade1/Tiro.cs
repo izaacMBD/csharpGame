@@ -36,7 +36,7 @@ namespace Atividade1
             }
 
             // Teste de colisão entre o tiro e o inimigo
-            if (personagemAlvo.Bounds.IntersectsWith(this.Bounds))
+            if (personagemAlvo != null && personagemAlvo.Bounds.IntersectsWith(this.Bounds))
             {
                 // Se colidir, destrói o inimigo e o tiro
                 (personagemAlvo as Inimigo).Destruir();

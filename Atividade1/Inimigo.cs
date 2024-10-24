@@ -21,8 +21,8 @@ namespace Atividade1
 		
 		public Inimigo()
 		{
-			Height = 130;
-			Width = 150;
+			Height = 100;
+			Width = 120;
 			Left = 600;
             Top = 100;
             Load("dragonEsq2.gif");
