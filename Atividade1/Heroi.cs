@@ -70,17 +70,7 @@ namespace Atividade1
 
         public void FireBall()
         {
-            // Cria a fireball e deixa-a na posição inicial
-            Tiro novoTiro = new Tiro();
             
-            novoTiro.Parent = MainForm.fundo;
-            
-            novoTiro.Left = Left;
-            novoTiro.Top = this.Top + (this.Height / 3);
-            
-            novoTiro.timer.Enabled = true;
-            
-            novoTiro.direcao = direcao;
         }
     }
 }

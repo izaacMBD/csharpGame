@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Drawing;
-using System.Collections.Generic;
 
 namespace Atividade1
 {
     public class Tiro : Personagem
     {
-        public Timer timer;
-        public static List<Tiro> tiros = new List<Tiro>(); // Lista para armazenar os tiros
+        public Timer timer = new Timer();
+        public int direcao = 0;
+        public int speed = 55;
+        public int dano = 10;
+        public Personagem personagemAlvo; // O alvo que o tiro pode acertar
 
         public Tiro()
         {
@@ -18,29 +20,36 @@ namespace Atividade1
 
             timer = new Timer();
             timer.Interval = 25; // Define o intervalo do timer
-            timer.Tick += UpdateTiros; // Adiciona o evento Tick
+            timer.Tick += (s, e) => Update(); // Liga o evento Tick ao método Update
             timer.Start(); // Inicia o timer
-
-            tiros.Add(this); // Adiciona o tiro à lista
         }
 
         public void Update()
         {
-            Left += 10 * direcao; // Move o tiro para frente
-            if (Left >= 1000 || Left <= 0) // Se o tiro ultrapassar a tela
+            // Movimento do tiro baseado na direção
+            Left += 10 * direcao;
+
+            // Verifica se o tiro saiu da tela
+            if (Left >= MainForm.fundo.Width || Left <= 0)
             {
-                timer.Enabled = false; // Desativa o timer
-                Dispose();
+                Destruir();
+            }
+
+            // Teste de colisão entre o tiro e o inimigo
+            if (personagemAlvo.Bounds.IntersectsWith(this.Bounds))
+            {
+                // Se colidir, destrói o inimigo e o tiro
+                (personagemAlvo as Inimigo).Destruir();
+                Destruir();
             }
         }
 
-        private void UpdateTiros(object sender, EventArgs e)
+        private void Destruir()
         {
-            for (int i = tiros.Count - 1; i >= 0; i--)
-            {
-                var tiro = tiros[i];
-                tiro.Update(); // Atualiza cada tiro
-            }
+            timer.Stop(); // Para o timer
+            timer.Dispose(); // Libera o timer da memória
+            MainForm.listaTiros.Items.Remove(this); // Remove o tiro da lista
+            this.Dispose(); // Destrói o objeto tiro
         }
     }
 }

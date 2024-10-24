@@ -9,16 +9,19 @@ namespace Atividade1
         const int MaxTiros = 6;
         int tirosDisponiveis = MaxTiros;
         Timer timerRecarga;
+        Heroi heroi = new Heroi();
+        public Inimigo inimigo = new Inimigo();
         
+        public static PictureBox fundo = new PictureBox();        
+		public static ListBox listaTiros = new ListBox();
+		
         public MainForm()
         {
             InitializeComponent();
             InitializeProgressBar();
         }
 
-        public static PictureBox fundo = new PictureBox();
-        Heroi heroi = new Heroi();
-        
+		
         void MainFormLoad(object sender, EventArgs e)
         {
             fundo.Parent = this;
@@ -49,9 +52,19 @@ namespace Atividade1
 
             if (e.KeyCode == Keys.Space && tirosDisponiveis > 0)
             {
-                heroi.FireBall();
+                // Cria a fireball e deixa-a na posição inicial
+	            Tiro novoTiro = new Tiro();
+	            novoTiro.Parent = MainForm.fundo;
+	            novoTiro.Left = heroi.Left;
+	            novoTiro.Top = heroi.Top + (heroi.Height / 3);
+	            novoTiro.timer.Enabled = true;
+	            novoTiro.direcao = heroi.direcao;
+	            novoTiro.personagemAlvo = inimigo;
+	            
                 tirosDisponiveis--;
+                
                 UpdateProgressBar();
+                
                 if (tirosDisponiveis == 0)
                 {
                     StartReload();
@@ -80,7 +93,7 @@ namespace Atividade1
         private void StartReload()
         {
             timerRecarga = new Timer();
-            timerRecarga.Interval = 1000; // 1 segundo de recarga para cada tiro
+            timerRecarga.Interval = 2000; // 1 segundo de recarga para cada tiro
             timerRecarga.Tick += TimerRecarga_Tick;
             timerRecarga.Start();
         }
