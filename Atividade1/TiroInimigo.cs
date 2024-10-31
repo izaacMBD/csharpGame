@@ -4,30 +4,29 @@ using System.Drawing;
 
 namespace Atividade1
 {
-    public class Tiro : Personagem
+    public class TiroInimigo : Personagem
     {
-    	public Tiro()
+    	public TiroInimigo()
     	{
     		Width = 30;
     		Height = 30;
-    		Load("fireball2.gif");
+    		Load("forceball.gif");
 
-    		timerTiro = new Timer();
-    		timerTiro.Interval = 25; // Define o intervalo do timer
-    		timerTiro.Tick += Update; // Liga o evento Tick ao método Update
-    		timerTiro.Start(); // Inicia o timer
+    		timerTiroInimigo = new Timer();
+    		timerTiroInimigo.Interval = 25; // Define o intervalo do timer
+    		timerTiroInimigo.Tick += Forceball; // Liga o evento Tick ao método Update
+    		timerTiroInimigo.Start(); // Inicia o timer
     	}
     	
 		public int direcao = 0;
     	public int speed = 55;
-    	public int dano = 20;
+    	public int dano = 100;
     	public Personagem personagemAlvo; // O alvo que o tiro pode acertar
-    	public Timer timerTiro = new Timer();
+    	public Timer timerTiroInimigo = new Timer();
     	
-    	public void Update(object sender, EventArgs e)
-    	{
-    		// Movimento do tiro baseado na direção
-    		Left += speed * direcao;
+    	public void Forceball(object sender, EventArgs e)
+		{
+    		Left += 5 * direcao;
     		
     		// Verifica se o tiro saiu da tela
     		if (Left >= MainForm.fundo.Width || Left <= 0)
@@ -39,15 +38,15 @@ namespace Atividade1
     		if (personagemAlvo != null && personagemAlvo.Bounds.IntersectsWith(this.Bounds))
     		{
     			// Se colidir, reduz a vida do inimigo
-    			(personagemAlvo as Inimigo).ReceberDano(dano);
+    			(personagemAlvo as Heroi).heroiRecebeDano(dano);
     			Destruir(); // Destrói o tiro
     		}
-    	}
+		}
 
         private void Destruir()
         {
-            timerTiro.Stop(); // Para o timer
-            timerTiro.Dispose(); // Libera o timer da memória
+            timerTiroInimigo.Stop(); // Para o timer
+            timerTiroInimigo.Dispose(); // Libera o timer da memória
             MainForm.listaTiros.Items.Remove(this); // Remove o tiro da lista
             this.Dispose(); // Destrói o objeto tiro
         }

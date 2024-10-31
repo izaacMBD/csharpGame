@@ -13,11 +13,13 @@ using System.Collections.Generic;
 
 namespace Atividade1
 {
-
+	
 	public class Inimigo : Personagem
 	{
 		int direcaoVertical = 1;
 		public Timer timerMovimento = new Timer();
+		
+		
 		
 		public Inimigo()
 		{
@@ -25,12 +27,15 @@ namespace Atividade1
 			Width = 120;
 			Left = 600;
             Top = 100;
+            speed = 10;
+            hp = 100;
             Load("dragonEsq2.gif");
             direcao = -1;
             
             timerMovimento.Enabled = true;
             timerMovimento.Interval = 80;
             timerMovimento.Tick += Movimento;
+            
 		}
 		
 		private void Movimento(object sender, EventArgs e)
@@ -44,6 +49,18 @@ namespace Atividade1
 			if(Top <= -40)
 			{
 				direcaoVertical = 1;
+			}
+		}
+		
+		
+		
+		public void ReceberDano(int dano)
+		{
+			hp -= dano; // Reduz a vida do inimigo
+			if (hp <= 0)
+			{
+				hp = 0;
+				Destruir();
 			}
 		}
 		

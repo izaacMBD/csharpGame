@@ -9,7 +9,9 @@ namespace Atividade1
         const int MaxTiros = 6;
         int tirosDisponiveis = MaxTiros;
         Timer timerRecarga;
-        Heroi heroi = new Heroi();
+		public Timer timerAtaque = new Timer(); // Timer para o ataque do inimigo
+        
+        public Heroi heroi = new Heroi();
         public Inimigo inimigo = new Inimigo();
         
         public static PictureBox fundo = new PictureBox();        
@@ -19,6 +21,10 @@ namespace Atividade1
         {
             InitializeComponent();
             InitializeProgressBar();
+            
+            timerAtaque.Enabled = true;
+            timerAtaque.Interval = 2000;
+            timerAtaque.Tick += AtaqueInimigo_Tick;
         }
 
 		
@@ -57,7 +63,7 @@ namespace Atividade1
 	            novoTiro.Parent = MainForm.fundo;
 	            novoTiro.Left = heroi.Left;
 	            novoTiro.Top = heroi.Top + (heroi.Height / 3);
-	            novoTiro.timer.Enabled = true;
+	            novoTiro.timerTiro.Enabled = true;
 	            novoTiro.direcao = heroi.direcao;
 	            novoTiro.personagemAlvo = inimigo;
 	            
@@ -71,7 +77,8 @@ namespace Atividade1
                 }
             }
         }
-
+        
+        
         private void InitializeProgressBar()
         {
             ProgressBar progressBar = new ProgressBar();
@@ -89,7 +96,6 @@ namespace Atividade1
             ProgressBar progressBar = (ProgressBar)this.Controls["progressBar"];
             progressBar.Value = tirosDisponiveis;
         }
-
         private void StartReload()
         {
             timerRecarga = new Timer();
@@ -112,5 +118,20 @@ namespace Atividade1
                 timerRecarga.Dispose();
             }
         }
+        
+        private void AtaqueInimigo_Tick(object sender, EventArgs e)
+		{
+            TiroInimigo tiroInimigo = new TiroInimigo();
+	        tiroInimigo.Parent = MainForm.fundo;
+	        tiroInimigo.Left = inimigo.Left;
+	        tiroInimigo.Top = inimigo.Top + (inimigo.Height / 2);
+	        tiroInimigo.timerTiroInimigo.Enabled = true;
+	        tiroInimigo.direcao = inimigo.direcao;
+	        tiroInimigo.personagemAlvo = heroi;
+		}
+        
+        
+        
+        
     }
 }

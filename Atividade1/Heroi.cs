@@ -15,6 +15,7 @@ namespace Atividade1
             speed = 20;
             Load("Gargoyle.gif");
             direcao = 1;
+            hp = 100;
 
         }
 
@@ -68,9 +69,15 @@ namespace Atividade1
             }
         }
 
-        public void FireBall()
-        {
-            
-        }
+        public void heroiRecebeDano(int dano)
+	    {
+	        // Reduz o HP do herói quando o inimigo atira
+	        hp -= 5; // Dano do tiro
+	        if (hp <= 0)
+	        {
+	            hp = 0;
+	            MessageBox.Show("O herói foi derrotado!");
+	        }
+	    }
     }
 }
