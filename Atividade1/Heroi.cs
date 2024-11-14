@@ -7,6 +7,7 @@ namespace Atividade1
 {
     public class Heroi : Personagem
     {
+    	TiroInimigo tiroInimigo = new TiroInimigo();
 
         public Heroi()
         {
@@ -72,11 +73,15 @@ namespace Atividade1
         public void heroiRecebeDano(int dano)
 	    {
 	        // Reduz o HP do herói quando o inimigo atira
-	        hp -= 5; // Dano do tiro
+	        hp -= 50; // Dano do tiro
 	        if (hp <= 0)
 	        {
 	            hp = 0;
 	            MessageBox.Show("O herói foi derrotado!");
+	            tiroInimigo.timerTiroInimigo.Stop();
+	            tiroInimigo.timerTiroInimigo.Enabled = false;
+	            MainForm.listaTiros.Items.Remove(this);
+	            this.Dispose();
 	        }
 	    }
     }
