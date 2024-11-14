@@ -8,25 +8,25 @@ namespace Atividade1
     {
     	public TiroInimigo()
     	{
-    		Width = 30;
-    		Height = 30;
+    		Width = 80;
+    		Height = 80;
     		Load("forceball.gif");
 
     		timerTiroInimigo = new Timer();
-    		timerTiroInimigo.Interval = 25; // Define o intervalo do timer
+    		timerTiroInimigo.Interval = 1; // Define o intervalo do timer
     		timerTiroInimigo.Tick += Forceball; // Liga o evento Tick ao método Update
     		timerTiroInimigo.Start(); // Inicia o timer
     	}
     	
 		public int direcao = 0;
-    	public int speed = 55;
-    	public int dano = 100;
+    	public int speed = 20;
+    	public int dano = 50;
     	public Personagem personagemAlvo; // O alvo que o tiro pode acertar
     	public Timer timerTiroInimigo = new Timer();
     	
     	public void Forceball(object sender, EventArgs e)
 		{
-    		Left += 5 * direcao;
+    		Left += speed * direcao;
     		
     		// Verifica se o tiro saiu da tela
     		if (Left >= MainForm.fundo.Width || Left <= 0)

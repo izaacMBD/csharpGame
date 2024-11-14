@@ -18,17 +18,18 @@ namespace Atividade1
 	{
 		int direcaoVertical = 1;
 		public Timer timerMovimento = new Timer();
+		public int mortesInimigo = 0;
 		
 		
 		
 		public Inimigo()
 		{
-			Height = 100;
-			Width = 120;
+			Height = 200;
+			Width = 220;
 			Left = 600;
             Top = 100;
-            speed = 10;
-            hp = 100;
+            speed = 20;
+            hp = 500;
             Load("dragonEsq2.gif");
             direcao = -1;
             
@@ -61,6 +62,8 @@ namespace Atividade1
 			{
 				hp = 0;
 				Destruir();
+				mortesInimigo += 1;
+				
 			}
 		}
 		
@@ -70,5 +73,14 @@ namespace Atividade1
 			Left = 5900;
 			this.Dispose();
 		}
+		
+		public void Resetar()
+	    {
+	        hp = 100;
+	        Left = 600;
+	        Top = 100;
+	        Load("dragonEsq2.gif");
+	        timerMovimento.Enabled = true;
+	    }
 	}
 }

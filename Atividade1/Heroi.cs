@@ -7,7 +7,9 @@ namespace Atividade1
 {
     public class Heroi : Personagem
     {
-    	TiroInimigo tiroInimigo = new TiroInimigo();
+        TiroInimigo tiroInimigo = new TiroInimigo();
+        
+        private bool heroiDerrotado = false;
 
         public Heroi()
         {
@@ -17,7 +19,6 @@ namespace Atividade1
             Load("Gargoyle.gif");
             direcao = 1;
             hp = 100;
-
         }
 
         // ============================= métodos de movimento =================================//
@@ -25,10 +26,6 @@ namespace Atividade1
         public void MoveDir()
         {
             Left += speed;
-            if (Left >= 1000)
-            {
-                Left = 0;
-            }
 
             if (direcao == -1)
             {
@@ -70,19 +67,31 @@ namespace Atividade1
             }
         }
 
+        // Método que recebe o dano do inimigo
         public void heroiRecebeDano(int dano)
-	    {
-	        // Reduz o HP do herói quando o inimigo atira
-	        hp -= 50; // Dano do tiro
-	        if (hp <= 0)
-	        {
-	            hp = 0;
-	            MessageBox.Show("O herói foi derrotado!");
-	            tiroInimigo.timerTiroInimigo.Stop();
-	            tiroInimigo.timerTiroInimigo.Enabled = false;
-	            MainForm.listaTiros.Items.Remove(this);
-	            this.Dispose();
-	        }
-	    }
+        {
+            // Reduz o HP do herói quando o inimigo atira
+            hp -= dano;
+            if (hp <= 0 && !heroiDerrotado)
+            {
+                hp = 0;
+                heroiDerrotado = true; // Marca que o herói foi derrotado
+                MessageBox.Show("O herói foi derrotado!");
+                
+                // Chama o método ResetarJogo da instância de MainForm
+                MainForm mainForm = (MainForm)Application.OpenForms[0]; // Obtém a instância do MainForm
+                mainForm.ResetarJogo(); // Chama o método para resetar o jogo
+            }
+        }
+        
+        // Método que reseta o estado do herói
+        public void Resetar()
+        {
+            heroiDerrotado = false;
+            hp = 100;
+            Left = 50;
+            Top = 100;
+            Load("Gargoyle.gif");
+        }
     }
 }
