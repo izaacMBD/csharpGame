@@ -8,8 +8,8 @@ namespace Atividade1
     {
     	public TiroInimigo()
     	{
-    		Width = 80;
-    		Height = 80;
+    		Width = 40;
+    		Height = 40;
     		Load("forceball.gif");
 
     		timerTiroInimigo = new Timer();

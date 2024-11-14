@@ -50,6 +50,19 @@ namespace Atividade1
 	            	MainForm.fundo.Load("cenario1.gif");
 	            	heroi.Left = 0;
 	            	cenario += 1;
+	            	
+	            	inimigo = new Inimigo();
+	            	inimigo.Height = 200;
+					inimigo.Width = 220;
+					inimigo.Left = 600;
+					inimigo.Top = 100;
+					inimigo.speed = 20;
+					inimigo.hp = 300;
+					
+            		TiroInimigo tiroInimigo = new TiroInimigo();
+            		tiroInimigo.Width = 100;
+            		tiroInimigo.Height = 100;
+					
 	            }
 	            
 	            if (heroi.Left >= 1000 && cenario == 1)
@@ -57,6 +70,18 @@ namespace Atividade1
 	            	MainForm.fundo.Load("cenario2.gif");
 	            	heroi.Left = 0;
 	            	cenario += 2;
+	            	
+	            	inimigo = new Inimigo();
+	            	inimigo.Height = 300;
+					inimigo.Width = 320;
+					inimigo.Left = 600;
+					inimigo.Top = 100;
+					inimigo.speed = 30;
+					inimigo.hp = 500;
+					
+					TiroInimigo tiroInimigo = new TiroInimigo();
+            		tiroInimigo.Width = 120;
+            		tiroInimigo.Height = 120;
 	            }
             }
             if (e.KeyCode == Keys.A || e.KeyCode == Keys.Left)

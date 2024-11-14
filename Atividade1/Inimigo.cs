@@ -18,25 +18,22 @@ namespace Atividade1
 	{
 		int direcaoVertical = 1;
 		public Timer timerMovimento = new Timer();
-		public int mortesInimigo = 0;
-		
-		
 		
 		public Inimigo()
 		{
-			Height = 200;
-			Width = 220;
+			Height = 100;
+			Width = 120;	
 			Left = 600;
-            Top = 100;
-            speed = 20;
-            hp = 500;
-            Load("dragonEsq2.gif");
-            direcao = -1;
-            
-            timerMovimento.Enabled = true;
-            timerMovimento.Interval = 80;
-            timerMovimento.Tick += Movimento;
-            
+			Top = 100;
+			speed = 10;
+			hp = 100;
+			Load("dragonEsq2.gif");
+			direcao = -1;
+			
+			timerMovimento.Enabled = true;
+			timerMovimento.Interval = 80;
+			timerMovimento.Tick += Movimento;
+			
 		}
 		
 		private void Movimento(object sender, EventArgs e)
@@ -62,7 +59,6 @@ namespace Atividade1
 			{
 				hp = 0;
 				Destruir();
-				mortesInimigo += 1;
 				
 			}
 		}
